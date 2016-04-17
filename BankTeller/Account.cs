@@ -26,8 +26,10 @@ namespace BankTeller
         }
 
         //Methods
-        public decimal DepositFunds(decimal depositAmount)
+        public decimal DepositFunds()
         {
+            Console.WriteLine("Enter amount to deposit:");
+            decimal depositAmount = Convert.ToDecimal(Console.ReadLine());
             this.Balance += depositAmount;
             Console.WriteLine("Your current balance now = $" + this.Balance);
             string time = Convert.ToString(DateTime.Now);
@@ -35,12 +37,28 @@ namespace BankTeller
             return this.Balance;
         }
 
-        public decimal WithdrawFunds(decimal withdrawAmount)
+        public decimal WithdrawFunds()
         {
-            this.Balance -= withdrawAmount;
-            Console.WriteLine("Your current balance now = $" + this.Balance);
-            string time = Convert.ToString(DateTime.Now);
-            this.AllTransactions.Add(time + "\t -\t$" + withdrawAmount + "\t$" + this.Balance);
+            if (this.Balance <= 0)
+            {
+                Console.WriteLine("You cannot make a withdrawal because your balance is $0.");
+            }
+            else
+            {
+                Console.WriteLine("Enter amount to withdraw:");
+                decimal withdrawAmount = Convert.ToDecimal(Console.ReadLine());
+                if (this.Balance >= withdrawAmount)
+                {
+                    this.Balance -= withdrawAmount;
+                    Console.WriteLine("Your current balance now = $" + this.Balance);
+                    string time = Convert.ToString(DateTime.Now);
+                    this.AllTransactions.Add(time + "\t -\t$" + withdrawAmount + "\t$" + this.Balance);
+                }
+                else
+                {
+                    Console.WriteLine("Your balance is not high enough for you to withdraw that amount.");
+                }
+            }
             return this.Balance;
         }
 

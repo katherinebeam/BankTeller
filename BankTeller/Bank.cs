@@ -27,33 +27,13 @@ namespace BankTeller
                         break;
                     case "B":
                         clientAccount.ViewAccountBalance();
-                        Console.WriteLine(clientAccount.Balance);
                         break;
                     case "C":
-                        Console.WriteLine("Enter amount to deposit:");
-                        decimal depositAmount = Convert.ToDecimal(Console.ReadLine());
-                        clientAccount.DepositFunds(depositAmount);
+                        clientAccount.DepositFunds();
                         break;
                     case "D":
-                        if (clientAccount.Balance <= 0)
-                        {
-                            Console.WriteLine("You cannot make a withdrawal because your balance is $0.");
-                            break;
-                        }
-                        else
-                        {
-                            Console.WriteLine("Enter amount to withdraw:");
-                            decimal withdrawAmount = Convert.ToDecimal(Console.ReadLine());
-                            if (clientAccount.Balance >= withdrawAmount)
-                            {
-                                clientAccount.WithdrawFunds(withdrawAmount);
-                            }
-                            else
-                            {
-                                Console.WriteLine("Your balance is not high enough for you to withdraw that amount.");
-                            }
-                            break;
-                        }
+                        clientAccount.WithdrawFunds();
+                        break;
                     case "E":
                         Console.WriteLine("Goodbye");
                         break;
