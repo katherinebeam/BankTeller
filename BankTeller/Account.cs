@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BankTeller
 {
@@ -13,33 +10,23 @@ namespace BankTeller
         private List<string> allTransactions = new List<string>();
 
         //Properties
-        public decimal Balance
-        {
-            get { return balance; }
-            set { balance = value; }
-        }
-
-        public List<string> AllTransactions
-        {
-            get { return allTransactions; }
-            set { allTransactions = value; }
-        }
+        public decimal Balance { get { return balance; } set { balance = value; } }
+        public List<string> AllTransactions { get { return allTransactions; } set { allTransactions = value; } }
 
         //Methods
-        public decimal DepositFunds()
+        public void DepositFunds()
         {
             Console.WriteLine("Enter amount to deposit:");
             decimal depositAmount = Convert.ToDecimal(Console.ReadLine());
-            this.Balance += depositAmount;
-            Console.WriteLine("Your current balance now = $" + this.Balance);
+            Balance += depositAmount;
+            Console.WriteLine("Your current balance now = $" + Balance);
             string time = Convert.ToString(DateTime.Now);
-            this.AllTransactions.Add(time + "\t +\t$" + depositAmount + "\t$" + this.Balance);
-            return this.Balance;
+            AllTransactions.Add(time + "\t +\t$" + depositAmount + "\t$" + Balance);
         }
 
-        public decimal WithdrawFunds()
+        public void WithdrawFunds()
         {
-            if (this.Balance <= 0)
+            if (Balance <= 0)
             {
                 Console.WriteLine("You cannot make a withdrawal because your balance is $0.");
             }
@@ -47,30 +34,29 @@ namespace BankTeller
             {
                 Console.WriteLine("Enter amount to withdraw:");
                 decimal withdrawAmount = Convert.ToDecimal(Console.ReadLine());
-                if (this.Balance >= withdrawAmount)
+                if (Balance >= withdrawAmount)
                 {
-                    this.Balance -= withdrawAmount;
-                    Console.WriteLine("Your current balance now = $" + this.Balance);
+                    Balance -= withdrawAmount;
+                    Console.WriteLine("Your current balance now = $" + Balance);
                     string time = Convert.ToString(DateTime.Now);
-                    this.AllTransactions.Add(time + "\t -\t$" + withdrawAmount + "\t$" + this.Balance);
+                    AllTransactions.Add(time + "\t -\t$" + withdrawAmount + "\t$" + Balance);
                 }
                 else
                 {
                     Console.WriteLine("Your balance is not high enough for you to withdraw that amount.");
                 }
             }
-            return this.Balance;
         }
 
         public void ViewAccountBalance()
         {
-            Console.WriteLine("Your current balance: $" + this.Balance);
+            Console.WriteLine("Your current balance: $" + Balance);
         }
 
         //Constructor
         public Account()
         {
-            this.Balance = 0.00M;
+            Balance = 0.00M;
         }
     }
 }

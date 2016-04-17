@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace BankTeller
 {
@@ -13,21 +10,13 @@ namespace BankTeller
         private string accountNumber;
 
         //Properties
-        public string AccountNumber
-        {
-            get { return accountNumber; }
-            set { accountNumber = GenerateAccountNumber(); }
-        }
-        public string Name
-        {
-            get { return name; }
-            set { name = value; }
-        }
+        public string AccountNumber { get { return accountNumber; } set { accountNumber = GenerateAccountNumber(); } }
+        public string Name { get { return name; } set { name = value; } }
 
         //Methods
         public void ViewClientInfo()
         {
-            Console.WriteLine("Name: " + this.Name + "\nAccount Number: " + this.AccountNumber);
+            Console.WriteLine("Name: " + Name + "\nAccount Number: " + AccountNumber);
         }
 
         private string GenerateAccountNumber()
@@ -45,13 +34,13 @@ namespace BankTeller
         //Constructors
         public Client()
         {
-            this.AccountNumber = GenerateAccountNumber();
+            AccountNumber = GenerateAccountNumber();
         }
 
         public Client(string name)
         {
-            this.Name = name;
-            this.AccountNumber = GenerateAccountNumber();
+            Name = name;
+            AccountNumber = GenerateAccountNumber();
         }
     }
 }
