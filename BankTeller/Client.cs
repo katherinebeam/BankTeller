@@ -9,11 +9,12 @@ namespace BankTeller
     class Client
     {
         //Fields
-        private string accountNumber;
         private string name = "Katherine Beam";
+        private string accountNumber;
 
         //Properties
-        public string AccountNumber {
+        public string AccountNumber
+        {
             get { return accountNumber; }
             set { accountNumber = GenerateAccountNumber(); }
         }
