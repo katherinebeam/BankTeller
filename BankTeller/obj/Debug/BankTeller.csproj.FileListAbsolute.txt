@@ -1,0 +1,6 @@
+c:\users\wecancodeit\documents\visual studio 2015\Projects\BankTeller\BankTeller\bin\Debug\BankTeller.exe.config
+c:\users\wecancodeit\documents\visual studio 2015\Projects\BankTeller\BankTeller\bin\Debug\BankTeller.exe
+c:\users\wecancodeit\documents\visual studio 2015\Projects\BankTeller\BankTeller\bin\Debug\BankTeller.pdb
+c:\users\wecancodeit\documents\visual studio 2015\Projects\BankTeller\BankTeller\obj\Debug\BankTeller.csprojResolveAssemblyReference.cache
+c:\users\wecancodeit\documents\visual studio 2015\Projects\BankTeller\BankTeller\obj\Debug\BankTeller.exe
+c:\users\wecancodeit\documents\visual studio 2015\Projects\BankTeller\BankTeller\obj\Debug\BankTeller.pdb
